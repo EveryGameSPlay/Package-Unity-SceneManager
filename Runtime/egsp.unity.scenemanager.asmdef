@@ -1,0 +1,17 @@
+{
+	"name": "egsp.unity.scenemanager",
+	"rootNamespace": "Egsp.Core.SceneManagement",
+	"references": [
+		"egsp.unity",
+		"egsp.unity.types"
+	],
+	"includePlatforms": [],
+	"excludePlatforms": [],
+	"allowUnsafeCode": false,
+	"overrideReferences": false,
+	"precompiledReferences": [],
+	"autoReferenced": true,
+	"defineConstraints": [],
+	"versionDefines": [],
+	"noEngineReferences": false
+}
