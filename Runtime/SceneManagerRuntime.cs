@@ -152,7 +152,7 @@ namespace Egsp.Core.SceneManagement
         
         private void ProceedUnloadRequest(SceneUnloadRequest request)
         {
-            Option<LinkedListNode<SceneInfo>> sceneInfoO;
+            Option<SceneInfo> sceneInfoO;
             if (request.Scene.IsSome)
             { 
                 // Поиск по экземпляру.
@@ -168,7 +168,7 @@ namespace Egsp.Core.SceneManagement
 
             if (sceneInfoO.IsSome)
             {
-                var sceneInfo = sceneInfoO.option.Value;
+                var sceneInfo = sceneInfoO.option;
                 _workingScenes.Remove(sceneInfoO.option);
                 
                 Logger.Log($"Сцена {request.Name} - добавлена в очередь на выгрузку по экземпляру.");
@@ -237,9 +237,9 @@ namespace Egsp.Core.SceneManagement
                     return Option<SceneLoadInfo>.None;
                 
                 // Extracting value from node and option
-                var sceneLoadInfo = sceneLoadInfoO.option.Value;
+                var sceneLoadInfo = sceneLoadInfoO.option;
                 // Remove from loading
-                _loadingScenes.Remove(sceneLoadInfoO.option);
+                _loadingScenes.Remove(sceneLoadInfo);
             
                 return sceneLoadInfo;
             }
@@ -275,9 +275,9 @@ namespace Egsp.Core.SceneManagement
                 if(sceneInfoO.IsNone)
                     return Option<SceneUnloadRequest>.None;
                 
-                var sceneInfo = sceneInfoO.option.Value;
+                var sceneInfo = sceneInfoO.option;
                 // Remove from loading
-                _unloadingScenes.Remove(sceneInfoO.option);
+                _unloadingScenes.Remove(sceneInfo);
             
                 return sceneInfo;
             }

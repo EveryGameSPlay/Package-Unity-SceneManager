@@ -2,7 +2,6 @@
 	"name": "egsp.unity.scenemanager",
 	"rootNamespace": "Egsp.Core.SceneManagement",
 	"references": [
-		"egsp.unity",
 		"egsp.unity.types"
 	],
 	"includePlatforms": [],

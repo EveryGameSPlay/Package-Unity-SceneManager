@@ -12,7 +12,7 @@
     "url": "https://github.com/EveryGameSPlay"
   },
   "gitDependencies": {
-    "egsp.unity":"https://github.com/EveryGameSPlay/Package-Unity.git#v2.0.0"
+    "egsp.unity.types":"https://github.com/EveryGameSPlay/Package-Unity-Types.git"
   },
   "unity": "2017.1"
 }

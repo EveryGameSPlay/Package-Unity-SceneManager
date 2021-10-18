@@ -26,7 +26,7 @@ namespace Egsp.Core.SceneManagement
 
             if (coincidence)
             {
-                var sceneDataO = coincidence.option.Value.Data;
+                var sceneDataO = coincidence.option.Data;
                 
                 if(sceneDataO)
                     if (sceneDataO.option is T data)
