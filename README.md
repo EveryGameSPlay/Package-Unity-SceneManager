@@ -26,7 +26,8 @@ SceneManager.LoadScene("first", mode: Additive).With("second")
 Пример параллельной загрузки двух сцен:
 ```f#
 SceneManager.LoadScene("first", mode: Additive).With("second")
-    .Parallel().Apply();
+    .Parallel()
+    .Apply();
 ```
 ### Ожидание
 Пример ожидания окончания загрузки:
@@ -40,7 +41,8 @@ SceneManager.LoadScene("first", mode: Additive).With("second")
 ### Теги
 Пример добавления тега сцене:
 ```f#
-SceneManager.LoadScene("first", mode: Additive).With("second").Tag("gameplay","systems")
+SceneManager.LoadScene("first", mode: Additive).With("second")
+    .Tag("gameplay","systems")
     .Apply()
 ```
 Теги в последствии могут быть получены при обращении к сцене. Удобно для обозначения функционала сцен в коде. Теги применяются только к корневому запросу.
@@ -56,7 +58,7 @@ SceneManager.LoadScene("first", mode: Additive)
         .OnComplete(x=>Debug.Log("completed inner")))
 
     .Tag("gameplay")
-    .OnComplete(x=>Debug.Log(completed root))
+    .OnComplete(x=>Debug.Log("completed root"))
     .Apply()
 ```
 Метод **Apply()** нужно вызывать только на корневом запросе.
